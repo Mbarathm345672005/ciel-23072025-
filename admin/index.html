@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Summary</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #6a0572;
+      --secondary-color: #8a2be2;
+      --accent-color: #00bfff;
+      --text-light: #f0f0f0;
+      --text-muted: #b0b0b0;
+      --success-color: #3cb371;
+      --info-color: #1e90ff;
+      --warning-color: #ffa500;
+      --error-color: #ff4500;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow-x: hidden;
+      background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(106,5,114,0.7) 0%, rgba(138,43,226,0.7) 100%);
+      z-index: 0;
+    }
+
+    .container-box {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      padding: 2.5rem;
+      width: 90%;
+      max-width: 1200px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: fadeIn 0.6s ease-out;
+      margin: 40px auto;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1, h2, h3, h4 {
+      color: white;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.75rem; }
+    h4 { font-size: 1.5rem; }
+
+    /* Table Styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      backdrop-filter: blur(5px);
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text-light);
+      vertical-align: middle;
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.2);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .doc-link {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .doc-link:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .container-box {
+        padding: 2rem;
+        max-width: 95%;
+      }
+      table {
+        font-size: 0.9em;
+      }
+      th, td {
+        padding: 0.8rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container-box {
+        padding: 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      tr {
+        margin-bottom: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1rem;
+      }
+      td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        white-space: normal;
+        text-align: right;
+      }
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 1rem;
+        font-weight: bold;
+        text-align: left;
+        color: white;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container-box">
+    <h1>Admin Document Summary</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Document</th>
+          <th>Uploaded By</th>
+          <th>Upload Time</th>
+          <th>Approved By</th>
+          <th>Approval Time</th>
+          <th>Approval Status</th>
+          <th>Reviewer</th>
+          <th>Review Time</th>
+          <th>Review Status</th>
+        </tr>
+      </thead>
+      <tbody id="docTableBody">
+        </tbody>
+    </table>
+  </div>
+
+  <script>
+    async function loadDocuments() {
+      try {
+        const response = await fetch('http://localhost:3000/api/documents');
+        const data = await response.json();
+        const tbody = document.getElementById('docTableBody');
+        tbody.innerHTML = '';
+
+        data.forEach(doc => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td data-label="Document"><a class="doc-link" href="${doc.document_link}" target="_blank">${doc.document_name}</a></td>
+            <td data-label="Uploaded By">${doc.uploaded_by}</td>
+            <td data-label="Upload Time">${formatDate(doc.upload_time)}</td>
+            <td data-label="Approved By">${doc.approved_by || 'N/A'}</td>
+            <td data-label="Approval Time">${formatDate(doc.approval_time)}</td>
+            <td data-label="Approval Status">${doc.approval_status || 'Pending'}</td>
+            <td data-label="Reviewer">${doc.reviewer || 'N/A'}</td>
+            <td data-label="Review Time">${formatDate(doc.review_time)}</td>
+            <td data-label="Review Status">${doc.review_status || 'Pending'}</td>
+          `;
+          tbody.appendChild(row);
+        });
+      } catch (error) {
+        console.error('Error loading documents:', error);
+      }
+    }
+
+    function formatDate(dateTimeStr) {
+      if (!dateTimeStr) return '';
+      const date = new Date(dateTimeStr);
+      return date.toLocaleString('en-IN', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      });
+    }
+
+    window.onload = loadDocuments;
+  </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "impactful-yeti-466710-a9",
+  "private_key_id": "ec43583c077c3c3f1bde0d028b3df9244cc4c6b7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCshzYsn7Zt+9rQ\nYWtJ9vjr/LbhX5URJOn1UxsxmjCkxZBwWP/OwroKM5v6Weetpfl1Vza4VtsSGrnG\ncXp5bPfNmzasF6+bDFnw3LQthNnp17AMzkVAJeHYyHeFYMgRSCnWkoHtuhAe64LQ\nN7GoqbYs4oKdlk5H/o7Noy0sQ17jInRE1sEUw2NhSGLoih0lBqDJglx/EkDTaUAd\nt4A4n58KF1ticMggANS/5A49vWvEOHUSw+zMIFo8WLruxUZTZPwJ3L7PVL5kQjah\nASsmCyAQSh+dG5BJgXDYVXxjaMoHYAfivPBEtg7VjkTTyPL2MjpSzVMelu6VdS+k\nlXLUvjfRAgMBAAECggEANlc4JwH/EdE78Fpe0qMpcBre90mFyCqaThzo+cyY+a0I\ne3psyBDpTAFJZacfo8AdPGpF3/Xrdl5YmTpw2wIJYwc6RyYGt41CXu0FCzlG8bJv\nzvjBMx07b25kxuve2CKkmuL2bYwnO7XuM+r22CrsKGMHxN7stRxmmjqFJeXqYxuY\nIXAL2RRzHifb9Z3vS2LRAb/rkzph26ZyywNGhAGa6nlJv0TVYQQDdaYCGUO9dOZY\nTKM+r51iVdURgeIJ7OkD+/Dzf9IjAyNRHAjn0CU6Ux7XiPrgru2I0e998gT4dOq7\nogCflsyQCQq3l6CgjxYmVPTIFXqS/JirP2hgKLCX6QKBgQDlbY5Baws8sxAGwIAl\ndDjfd8BTxqHNBdsRlLywjAurHHhQXsq42VGScKHDy3Cs2zi8m/STzWFjj2IkKJDD\n4qH1HAG6NzgqAjF9XkwvRWsGrlQcJJhcn4/YEeRjr4LFdD9dIYQt7CFpk4Vr1CrL\nEdttaaSlNvo05gflmuLnxgVf6wKBgQDAgpnQfA1GeLTMmThQhX6zWQnsgRo+5WNX\nEjfiT4mSy6mOncWzh1sLUuMMH6F3cUX/6WJkl7XJax3WNeb5qRq44m8nNfFWFb1t\n8IHKbjFLdQuiZBGt0zCTpbjBkrMdVI7Dpg7x7UcMhWRwsbssiKfKw5E9Ph6kUI6A\n4Mz28NlUMwKBgQCdq3fbD2SOl4SJD1xB4SiAsvyS1mw1yTNvVqeCMQyH0K4CldJ9\nzKPZntwdAb/ym0nXnNothTTLxistLE+ovySMnW22euJ3RECcpuR2jB9sXPvix2eK\nKAIj/M/XjjOx3Rz6tODw6llgBAjqPMoX+rKw86w5+pljJz8AFTyhCh6BdwKBgFRg\nqfRkexkZTP2kZrd8W5VWgHAGAi/xMQJ3/MCX5g/ObooRAxd2S2SCNvwYXRhSMMFD\nVRoMGOSoq5I5W/yvrwO8U8XW8emua7HlSa4lcDvHmIrb25fZyh/c8kb9+r3vUwfU\nIBbPzmVhji2K6SRS3WCVKXKzaJDSsjMw1QWjeU5bAoGAKtQJQz0VJxfr9Ci+JDXD\nKajgN083KJUWmvbf102YfJZfLHqBDsl7iCuCKmNo3kv504VqcqG1PgbFdKFX5YNg\nH91pUOvEf45YBcLe/M6WGgYHsvLJLkjRdxxDe6tprrnSDNDy2mhTUBBk24R4OQlW\nstv24OgxjzeO6wTZmCYAM3c=\n-----END PRIVATE KEY-----\n",
+  "client_email": "clm-drive-service@impactful-yeti-466710-a9.iam.gserviceaccount.com",
+  "client_id": "103238615549214587571",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/clm-drive-service%40impactful-yeti-466710-a9.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
